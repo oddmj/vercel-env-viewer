@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "node20",
+    "noEmitOnError": true,
+    "outDir": "../dist"
+  },
+  "include": ["./"]
+}

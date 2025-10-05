@@ -1,21 +1,58 @@
 {
-  "name": "vercel-env-ui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "vercel-env-viewer",
+  "version": "0.0.1",
+  "description": "A simple, local environment variables viewer for Vercel projects",
+  "keywords": ["vercel", "environment", "variables", "viewer", "cli", "tool"],
+  "author": {
+    "name": "oddmj",
+    "email": "laranhee@gmail.com",
+    "url": "https://github.com/oddmj"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/oddmj/vercel-env-viewer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oddmj/vercel-env-viewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oddmj/vercel-env-viewer/issues"
+  },
   "type": "module",
+  "files": [
+    "bin/",
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "vercel-env-viewer": "./bin/vercel-env-viewer"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:server": "tsc -p ./server/tsconfig.json",
+    "build:all": "npm run build && npm run build:server",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "format": "prettier --write .",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build:all"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.2",
+    "commander": "^14.0.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "ky": "^1.11.0",
+    "lucide-react": "^0.544.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-data-grid": "^7.0.0-beta.57",
+    "react-dom": "^19.1.1",
+    "type-fest": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
-    "@types/node": "^24.6.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.6.2",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
@@ -23,6 +60,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "prettier": "^3.6.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7"
