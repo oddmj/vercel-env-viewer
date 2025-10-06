@@ -1,6 +1,6 @@
 {
   "name": "vercel-env-viewer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple, local environment variables viewer for Vercel projects",
   "keywords": ["vercel", "environment", "variables", "viewer", "cli", "tool"],
   "author": {
